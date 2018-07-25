@@ -8,12 +8,14 @@ from toys.serializers import ToySerializer
 
 toy_release_date = timezone.make_aware(datetime.now(),
 timezone.get_current_timezone())
+
 toy1 = Toy(name='Snoopy talking action figure',
     description='Snoopy speaks five languages',
     release_date=toy_release_date,
     toy_category='Action figures',
     was_included_in_home=False)
 toy1.save()
+
 toy2 = Toy(name='Hawaiian Barbie',
     description='Barbie loves Hawaii',
     release_date=toy_release_date, toy_category='Dolls',

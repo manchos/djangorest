@@ -6,3 +6,5 @@ urlpatterns = [
     path('toys/', views.toy_list),
     re_path(r'^toys/(?P<pk>[0-9]+)$', views.toy_detail),
 ]
+
+

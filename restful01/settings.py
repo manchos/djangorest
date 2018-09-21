@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'drones.apps.DronesConfig',
-    'django_extensions'
+    'django_extensions',
+    'toys',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +135,18 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+DEFAULT_PARSER_CLASSES = (
+    'rest_framework.parsers.JSONParser',
+    'rest_framework.parsers.FormParser',
+    'rest_framework.parsers.MultiPartParser',
+)
+
+DEFAULT_RENDERER_CLASSES = (
+    'rest_framework.renderers.JSONRenderer',
+    'rest_framework.renderers.BrowsableAPIRenderer',
+)
 
 
 # Static files (CSS, JavaScript, Images)

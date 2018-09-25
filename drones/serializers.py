@@ -10,7 +10,8 @@ class DroneCategorySerializer(serializers.HyperlinkedModelSerializer):
     drones = serializers.HyperlinkedRelatedField(
         many=True,
         read_only=True,
-        view_name='drone-detail')
+        view_name='drone-detail'
+    )
 
     class Meta:
         model = DroneCategory
@@ -18,14 +19,16 @@ class DroneCategorySerializer(serializers.HyperlinkedModelSerializer):
             'url',
             'pk',
             'name',
-            'drones')
+            'drones'
+        )
 
 
 class DroneSerializer(serializers.HyperlinkedModelSerializer):
     # Display the category name
     drone_category = serializers.SlugRelatedField(
         queryset=DroneCategory.objects.all(),
-        slug_field='name')
+        slug_field='name'
+    )
 
     class Meta:
         model = Drone
@@ -35,7 +38,8 @@ class DroneSerializer(serializers.HyperlinkedModelSerializer):
             'drone_category',
             'manufacturing_date',
             'has_it_competed',
-            'inserted_timestamp')
+            'inserted_timestamp'
+        )
 
 
 class CompetitionSerializer(serializers.HyperlinkedModelSerializer):
@@ -49,7 +53,8 @@ class CompetitionSerializer(serializers.HyperlinkedModelSerializer):
             'pk',
             'distance_in_feet',
             'distance_achievement_date',
-            'drone')
+            'drone'
+        )
 
 
 class PilotSerializer(serializers.HyperlinkedModelSerializer):
